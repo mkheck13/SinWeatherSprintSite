@@ -1,7 +1,95 @@
 
 body{
     background-image: url(../assets/ae341126babf4abed6f1e03065c83903e0db5a7b_2000x2000\ 1.png);
+    background-size: cover;
 }
+
+.mainBox{
+    margin: 20px;
+}
+.currentDay{
+    background-color: #707093B2;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.currentImage{
+    width: 100%;
+}
+.currentDes{
+    text-align: center;
+    color: white;
+}
+.currentDate{
+    text-align: center;
+}
+.currentTemp{
+    font-size: 75px;
+}
+
 .favCol{
     background-color:#707093B2;
+    padding: 10px;
+    border-radius: 10px;
 }
+.favTab{
+    color: white;
+    text-align: center;
+}
+.forCard{
+    background-color: #707093B2;
+    color: white;
+    text-align: center;
+}
+
+.cityName{
+    background-color: #44447BCC;
+    color: white;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.fiveDayFor{
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: transparent;
+    color: black;
+    font-size: 17px;
+    border: 1px solid transparent;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

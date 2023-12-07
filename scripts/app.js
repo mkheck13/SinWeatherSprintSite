@@ -1,7 +1,8 @@
-import {apiKey} from "./enviroment.js";
+import { apiKey } from "./enviroment.js";
 
-//Current Day
 
+let searchBar = document.getElementById('searchBar');
+let searchBtn = document.getElementById('searchBtn');
 let cityName = document.getElementById('cityName');
 let curDate = document.getElementById('curDate');
 let curTemp = document.getElementById('curTemp');
@@ -13,106 +14,128 @@ let curWind = document.getElementById('curWind');
 let curWeId = document.getElementById('curWeId');
 let weatherDes = document.getElementById('weatherDes');
 
-//Next Day
+let lat;
+let lon;
 
-let dayTwo = document.getElementById('dayTwo');
-let twoDes = document.getElementById('twoDes');
-let twoHigh = document.getElementById('twoHigh');
-let twoLow = document.getElementById('twoLow');
-
-//Date
-const dateObject = new Date();
-curDate.innerText = dateObject.toLocaleDateString("default",{weekday:"long", month:"long",day:"numeric"});
-
-//Fetch API
-async function apiCall(){
-    const promise = await fetch (`http://api.openweathermap.org/geo/1.0/direct?q=london&limit=1&appid=${apiKey}`);
-    const data = await promise.json()
-    console.log(data[0].name)
-    cityName.innerText = data[0].name;
-    
-}
-apiCall()
-
-async function apiLat(){
-    const latProm =await fetch (`http://api.openweathermap.org/data/2.5/forecast?lat=51.5073219&lon=-0.1276474&appid=${apiKey}&units=imperial`)
-    const latData = await latProm.json()
-    console.log(latData.list[0].main.temp)
-    curTemp.innerText = Math.round(latData.list[0].main.temp) + "°";
-    curHi.innerText = Math.round(latData.list[0].main.temp_max) + "°";
-    curLo.innerText = Math.round(latData.list[0].main.temp_min) + "°";
-    feelLike.innerText = Math.round(latData.list[0].main.feels_like) + "°";
-    curHum.innerText = Math.round(latData.list[0].main.humidity) + "%";
-    curWind.innerText = Math.round(latData.list[0].wind.speed) + " mph";
-    curWeId.src = `https://openweathermap.org/img/wn/${latData.list[0].weather[0].icon}@2x.png`;
-    weatherDes.innerText = latData.list[0].weather[0].description;
-
-    
-
-    
-    
-
-}
-apiLat()
-
-
-
-//ID's
 let citySearch = document.getElementById('citySearch');
 let curDay = document.getElementById('curDay');
 let favBtn = document.getElementById("favBtn");
 
+//Current Date
+const dateObject = new Date();
+curDate.innerText = dateObject.toLocaleDateString("default", { weekday: "long", month: "long", day: "numeric" });
 
+//Five Day Dates
+//Day 1
+// let dayOne = document.getElementById('dayOne');
+// let dayOneImage = document.getElementById('dayOneImage');
+// let day1Des = document.getElementById('day1Des');
+// let day1Hi = document.getElementById('day1Hi');
+// let day1Lo = document.getElementById('day1Lo');
 
-
-
-
-
-
-
-
-
-
-
-//day
-//icon
-//high
-//low
-
-
-
-
-
-
-
-
+//Day 2
+// let dayTwo = document.getElementById('dayTwo');
+// let dayTwoImage = document.getElementById('dayTwoImage');
+// let day2Des = document.getElementById('day2Des');
+// let day2Hi = document.getElementById('day2Hi');
+// let day2Lo = document.getElementById('day2Lo');
 
 //Day 3
-
-//day
-//icon
-//high
-//low
-
-
-
-
-
+// let dayThree = document.getElementById('dayThree');
+// let dayThreeImage = document.getElementById('dayThreeImage');
+// let day3Des = document.getElementById('day3Des');
+// let day3Hi = document.getElementById('day3Hi');
+// let day3Lo = document.getElementById('day3Lo');
 
 //Day 4
+// let dayFour = document.getElementById('dayFour');
+// let dayFourImage = document.getElementById('dayFourImage');
+// let day4Des = document.getElementById('day4Des');
+// let day4Hi = document.getElementById('day4Hi');
+// let day4Lo = document.getElementById('day4Lo');
 
-//day
-//icon
-//high
-//low
+//Day5
+// let dayFive = document.getElementById('dayFive');
+// let dayFiveImage = document.getElementById('dayFiveImage');
+// let day5Des = document.getElementById('day5Des');
+// let day5Hi = document.getElementById('day5Hi');
+// let day5Lo = document.getElementById('day5Lo');
+
+
+
+
+//User Location
+
+navigator.geolocation.getCurrentPosition(success);
+
+//search bar
+
+async function success(position) {
+   
+
+    //arrays
+
+    // let day1MaxAr = []
+    // let day2MaxAr = []
+    // let day3MaxAr = []
+    // let day4MaxAr = []
+    // let day5MaxAr = []
+
+    // let day1MinAr = []
+    // let day2MinAr = []
+    // let day3MinAr = []
+    // let day4MinAr = []
+    // let day5MinAr = []
+
+    // let day1StatusAr = []
+    // let day2StatusAr = []
+    // let day3StatusAr = []
+    // let day4StatusAr = []
+    // let day5StatusAr = []
 
 
 
 
 
-//Day 5
 
-//day
-//icon
-//high
-//low
+
+    if (searchBar.value) {
+        const citySearch = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchBar.value}&limit=1&appid=${apiKey}`);
+        const cityName = await citySearch.json();
+        lat = cityName[0].lat;
+        lon = cityName[0].lon;
+    }
+
+    else {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+       
+    
+
+        
+
+
+    }
+     const now = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`)
+    const currentWeather = await now.json()
+    cityName.innerText = currentWeather.name;
+    curTemp.innerText = Math.round(currentWeather.main.temp) + "°";
+    curHi.innerText =  "Hi:" + Math.round(currentWeather.main.temp_max) + "°";
+    curLo.innerText = "Lo:" + Math.round(currentWeather.main.temp_min) + "°";
+    feelLike.innerText = "Feels Like:" + Math.round(currentWeather.main.feels_like) + "°";
+    curHum.innerText = "Humidity" + Math.round(currentWeather.main.humidity) + "%";
+    curWind.innerText = "Wind:" + Math.round(currentWeather.wind.speed) + " mph";
+    curWeId.src = `https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`;
+    weatherDes.innerText = currentWeather.weather[0].description;
+
+
+
+
+}
+searchBar.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        success(searchBar.value)
+        e.preventDefault();
+        return false;
+    }
+});

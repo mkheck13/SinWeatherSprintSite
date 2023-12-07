@@ -1,93 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather Sprint</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Weather Sprint</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./styles/styles.css" />
-</head>
+  <body>
+    <div class="container-fluid mainBox">
+      <div class="row">
+        <div class="col-3 favCol">
+          <h5 class="favTab">Favorites</h5>
+        </div>
 
-<body>
+        <div class="col-9">
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+              <form class="example" action="action_page.php">
+                <input
+                  type="text"
+                  placeholder="Enter City Here"
+                  name="search"
+                  id="searchBar"
+                />
 
-<div class="row">
-  <div class="col-3 favCol">
-    <h1 class="favTab">Favorites</h1>
-  </div>
-  <div class="col-9">
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-3">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Enter City Here" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-      <div class="col-3"></div>
-    </div>
-    <div class="row">
-      <h1 id="cityName" >City</h1>
-      <div class="col-3">
-        <img src="" alt="Current Weather Image" id="curWeId">
-        <h3 id="weatherDes">weather description</h3>
-      </div>
-      <div class="col-6">
+                <button type="submit" id="searchBtn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+            <div class="col-3"></div>
+          </div>
+          <div class="row currentDay">
+            <!--current city -->
+            <h3 class="cityName" id="cityName">City</h3>
+            <!--current day image -->
+            <div class="col-3">
+              <img
+                src=""
+                alt="Current Weather Image"
+                id="curWeId"
+                class="currentImage"
+              />
+              <h6 class="currentDes" id="weatherDes">weather description</h6>
+            </div>
+            <!--current day info -->
+            <div class="col-6">
               <div class="row">
-        <h2 id="curDate">date</h2>
-        <h2 id="curTemp" >current temp</h2>
-        <h2 id="curHi" >hi temp</h2>
-        <h2 id="curLo">lo temp</h2>
-        <h2 id="feelLike">feels like</h2>
-        <h2 id="curHum">humidity</h2>
-        <h2 id="curWind">wind</h2>
+                <h4 class="currentDate" id="curDate">date</h4>
+                <br />
+                <hr />
+                <div class="row">
+                  <div class="col-3">
+                    <h1 class="currentTemp" id="curTemp">current temp</h1>
+                    <div class="row">
+                      <div class="col">
+                        <p id="curHi">hi temp</p>
+                      </div>
+                      <div class="col">
+                        <p id="curLo">lo temp</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <h4 id="feelLike">feels like</h4>
+                    <h4 id="curHum">humidity</h4>
+                    <h4 id="curWind">wind</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--day one -->
+          <div class="row fiveDayFor">
+            <div class="card forCard" style="width: 150px">
+              <h5 class="card-title" id="dayOne">Day 1</h5>
+              <img
+                src=""
+                class="card-img-top"
+                alt="Day one weather Image"
+                id="dayOneImage"
+              />
+              <p id="day1Des" >Day 1 Description</p>
+              <p id="day1Hi">Day 1 Hi</p>
+              <p id="day1Lo">Day 1 Lo</p>
+            </div>
+            <!--day two -->
+            <div class="card forCard" style="width: 150px">
+              <h5 class="card-title" id="dayTwo">Day 2</h5>
+              <img
+                src=""
+                class="card-img-top"
+                alt="Day two weather Image"
+                id=" dayTwoImage"
+              />
+              <p id="day2Des">Day 2 Description</p>
+              <p id="day2Hi">Day 2 Hi</p>
+              <p id="day2Lo">Day 2 Lo</p>
+            </div>
+            <!--day three -->
+            <div class="card forCard" style="width: 150px">
+              <h5 class="card-title" id="dayThree">Day 3</h5>
+              <img
+                src=""
+                class="card-img-top"
+                alt="Day three weather Image"
+                id=" dayThreeImage"
+              />
+              <p id="day3Des">Day 3 Description</p>
+              <p id="day3Hi">Day 3 Hi</p>
+              <p id="day3Lo">Day 3 Lo</p>
+            </div>
+            <!--day four -->
+            <div class="card forCard" style="width: 150px">
+              <h5 class="card-title" id="dayFour">Day 4</h5>
+              <img
+                src=""
+                class="card-img-top"
+                alt="Day four weather Image"
+                id=" dayFourImage"
+              />
+              <p id="day4Des">Day 4 Description</p>
+              <p id="day4Hi">Day 4 Hi</p>
+              <p id="day4Lo">Day 4 Lo</p>
+            </div>
+            <!--day five -->
+            <div class="card forCard" style="width: 150px">
+              <h5 class="card-title" id="dayFive">Day 5</h5>
+              <img
+                src=""
+                class="card-img-top"
+                alt="Day five weather Image"
+                id=" dayFiveImage"
+              />
+              <p id="day5Des">Day 5 Description</p>
+              <p id="day5Hi">Day 5 Hi</p>
+              <p id="day5Lo">Day 5 Lo</p>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
       </div>
     </div>
-      </div>
 
-
-
-
-
-
-
-
-
-
-
-  </div>
-</div>
-
-<!--day two -->
-<div class="row">
-  <div class="card" style="width: 18rem;">
-    <h5 class="card-title" id="dayTwo">Day 2</h5>
-    <img src="" class="card-img-top" alt="Day two weather Image" id=" dayTwoImage">
-    <div class="card-body">
-      
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  <script type="module" src="./scripts/app.js"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./scripts/app.js"></script>
+  </body>
 </html>
