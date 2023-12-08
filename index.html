@@ -22,30 +22,136 @@
       <div class="row">
         <div class="col-3 favCol">
           <h5 class="favTab">Favorites</h5>
+          <!-- start of fav column -->
+
+          <!-- fav 1 -->
+          <div class="favBox" id="favBox">
+            <div class="row">
+               <div class="col-6">
+              <h4 id="favCity1">Fav City 1</h4>
+              <p id="fav1Weather"> Fav City 1 Weather</p>
+            </div>
+            <div class="col-3">
+              <img src="" alt="current weather image" id="fav1Image">
+            </div>
+            <div class="col-3">
+              <h4 id="fav1Temp" >Temp</h4>
+            </div>
+            </div>
+          </div>
+
+          <!-- fav 2 -->
+          <div class="favBox" id="favBox">
+            <div class="row">
+               <div class="col-6">
+              <h4 id="favCity2">Fav City 2</h4>
+              <p id="fav1Weather"> Fav City 2 Weather</p>
+            </div>
+            <div class="col-3">
+              <img src="" alt="current weather image" id="fav2Image">
+            </div>
+            <div class="col-3">
+              <h4 id="fav2Temp" >Temp</h4>
+            </div>
+            </div>
+          </div>
+
+          <!-- fav 3 -->
+          <div class="favBox" id="favBox">
+            <div class="row">
+               <div class="col-6">
+              <h4 id="favCity3">Fav City 3</h4>
+              <p id="fav3Weather"> Fav City 3 Weather</p>
+            </div>
+            <div class="col-3">
+              <img src="" alt="current weather image" id="fav3Image">
+            </div>
+            <div class="col-3">
+              <h4 id="fav3Temp" >Temp</h4>
+            </div>
+            </div>
+          </div>
+
+          <!-- fav 4 -->
+          <div class="favBox" id="favBox">
+            <div class="row">
+               <div class="col-6">
+              <h4 id="favCity4">Fav City 4</h4>
+              <p id="fav4Weather"> Fav City 4 Weather</p>
+            </div>
+            <div class="col-3">
+              <img src="" alt="current weather image" id="fav4Image">
+            </div>
+            <div class="col-3">
+              <h4 id="fav4Temp" >Temp</h4>
+            </div>
+            </div>
+          </div>
+
+          <!-- fav 5 -->
+          <div class="favBox" id="favBox">
+            <div class="row">
+               <div class="col-6">
+              <h4 id="favCity5">Fav City 5</h4>
+              <p id="fav5Weather"> Fav City 5 Weather</p>
+            </div>
+            <div class="col-3">
+              <img src="" alt="current weather image" id="fav5Image">
+            </div>
+            <div class="col-3">
+              <h4 id="fav5Temp" >Temp</h4>
+            </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+          <!-- end of fav column -->
         </div>
 
         <div class="col-9">
           <div class="row">
             <div class="col-3"></div>
             <div class="col-3">
-              <form class="example" action="action_page.php">
-                <input
-                  type="text"
-                  placeholder="Enter City Here"
-                  name="search"
-                  id="searchBar"
-                />
 
-                <button type="submit" id="searchBtn">
-                  <i class="fa fa-search"></i>
-                </button>
-              </form>
+
+
+              <form class="inline example">
+                <div class="input-icons">
+                    <i class="fa fa-search"></i>
+                    <input class="input-field" type="text" placeholder="Enter City Here"
+                    name="search"
+                    id="searchBar">
+
+                </div>
+          </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
             <div class="col-3"></div>
           </div>
           <div class="row currentDay">
+            
             <!--current city -->
-            <h3 class="cityName" id="cityName">City</h3>
+             <h3 class="cityName" id="cityName">City</h3>
             <!--current day image -->
             <div class="col-3">
               <img
@@ -57,13 +163,13 @@
               <h6 class="currentDes" id="weatherDes">weather description</h6>
             </div>
             <!--current day info -->
-            <div class="col-6">
+            <div class="col-6 txtColor">
               <div class="row">
                 <h4 class="currentDate" id="curDate">date</h4>
                 <br />
                 <hr />
                 <div class="row">
-                  <div class="col-3">
+                  <div class="col-6">
                     <h1 class="currentTemp" id="curTemp">current temp</h1>
                     <div class="row">
                       <div class="col">
@@ -74,7 +180,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-3">
+                  <div class="col-6">
                     <h4 id="feelLike">feels like</h4>
                     <h4 id="curHum">humidity</h4>
                     <h4 id="curWind">wind</h4>
@@ -86,7 +192,7 @@
 
           <!--day one -->
           <div class="row fiveDayFor">
-            <div class="card forCard" style="width: 150px">
+            <div class="card forCard" style="width: 175px">
               <h5 class="card-title" id="dayOne">Day 1</h5>
               <img
                 src=""
@@ -95,60 +201,55 @@
                 id="dayOneImage"
               />
               <p id="day1Des" >Day 1 Description</p>
-              <p id="day1Hi">Day 1 Hi</p>
-              <p id="day1Lo">Day 1 Lo</p>
+              <p id="day1HL">Day 1 HL</p>
             </div>
             <!--day two -->
-            <div class="card forCard" style="width: 150px">
+            <div class="card forCard" style="width: 175px">
               <h5 class="card-title" id="dayTwo">Day 2</h5>
               <img
                 src=""
                 class="card-img-top"
                 alt="Day two weather Image"
-                id=" dayTwoImage"
+                id="dayTwoImage"
               />
               <p id="day2Des">Day 2 Description</p>
-              <p id="day2Hi">Day 2 Hi</p>
-              <p id="day2Lo">Day 2 Lo</p>
+              <p id="day2HL">Day 2 HL</p>
             </div>
             <!--day three -->
-            <div class="card forCard" style="width: 150px">
+            <div class="card forCard" style="width: 175px">
               <h5 class="card-title" id="dayThree">Day 3</h5>
               <img
                 src=""
                 class="card-img-top"
                 alt="Day three weather Image"
-                id=" dayThreeImage"
+                id="dayThreeImage"
               />
               <p id="day3Des">Day 3 Description</p>
-              <p id="day3Hi">Day 3 Hi</p>
-              <p id="day3Lo">Day 3 Lo</p>
+              <p id="day3HL">Day 3 HL</p>
             </div>
             <!--day four -->
-            <div class="card forCard" style="width: 150px">
+            <div class="card forCard" style="width: 175px">
               <h5 class="card-title" id="dayFour">Day 4</h5>
               <img
                 src=""
                 class="card-img-top"
                 alt="Day four weather Image"
-                id=" dayFourImage"
+                id="dayFourImage"
               />
               <p id="day4Des">Day 4 Description</p>
-              <p id="day4Hi">Day 4 Hi</p>
-              <p id="day4Lo">Day 4 Lo</p>
+              <p id="day4HL">Day 4 HL</p>
             </div>
             <!--day five -->
-            <div class="card forCard" style="width: 150px">
+            <div class="card forCard" style="width: 175px">
               <h5 class="card-title" id="dayFive">Day 5</h5>
               <img
                 src=""
                 class="card-img-top"
                 alt="Day five weather Image"
-                id=" dayFiveImage"
+                id="dayFiveImage"
               />
               <p id="day5Des">Day 5 Description</p>
-              <p id="day5Hi">Day 5 Hi</p>
-              <p id="day5Lo">Day 5 Lo</p>
+              <p id="day5HL">Day 5 HL</p>
             </div>
 
 

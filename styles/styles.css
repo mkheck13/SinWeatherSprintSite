@@ -14,6 +14,49 @@ body{
     margin-right: 20px;
     border-radius: 10px;
 }
+
+.favBox{
+    background-color: #44447BCC;
+    color: white;
+    padding: 20px;
+    margin-top: 8px;
+    
+}
+
+
+
+
+
+
+.inline{
+    max-width:400px;
+    margin:auto;
+}
+.input-icons i {
+    position:absolute;
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+  
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 3px;
+
+}
+
+.txtColor{
+    color: white;
+}
 .currentImage{
     width: 100%;
 }
@@ -25,7 +68,8 @@ body{
     text-align: center;
 }
 .currentTemp{
-    font-size: 75px;
+    font-size: 100px;
+    text-align: center;
 }
 
 .favCol{
@@ -63,29 +107,16 @@ body{
   form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid grey;
+    border: 2px solid transparent;
     border-radius: 10px;
     float: left;
     width: 80%;
-    background: #f1f1f1;
+    background: #707093B2;
   }
   
-  /* Style the submit button */
-  form.example button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: transparent;
-    color: black;
-    font-size: 17px;
-    border: 1px solid transparent;
-    border-left: none; /* Prevent double borders */
-    cursor: pointer;
-  }
+
   
-  form.example button:hover {
-    background: #0b7dda;
-  }
+
   
   /* Clear floats */
   form.example::after {
