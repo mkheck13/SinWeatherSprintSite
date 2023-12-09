@@ -6,5 +6,5 @@
 # 12/8/23 3:35pm Got the five day to work. Started laying out the favorites, didn't get it done. Will finish the parts that didn't get done at a later point.
 
 # Peer Review:
-# Name:
-# Comments:
+# Name: Mark Ortega
+# Comments: Site looks good, favorites bar doesn't work but is still designed well, The weather icons change and are styled better then the figma icons. Search functionality is great. Current forecast works and 5 day forecast works as intended. Style overall looks good/better then the figma although there could be spacing in between the "feels like", "humidity" etc. Other than that job well done!
